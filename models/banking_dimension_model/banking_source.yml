@@ -1,0 +1,37 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: RAW
+    database: BANKING_DWH  # replace with your Snowflake DB
+    tables:
+      - name: Customers
+        description: "Raw customer data"
+        columns:
+          - name: CustomerID
+            description: "Primary key of the customer"
+          - name: FirstName
+            description: "Customer's first name"
+          - name: LastName
+            description: "Customer's last name"
+          - name: DOB
+            description: "Date of birth of the customer"
+          - name: City
+            description: "City of the customer"
+      - name: Accounts
+        description: "Raw account data"
+        columns:
+          - name: AccountID
+            description: "Primary key of the account"
+          - name: CustomerID
+            description: "Customer ID owning this account"
+          - name: AccountType
+            description: "Type of account"
+          - name: Balance
+            description: "Current balance"
+      - name: Transactions
+        description: "Raw transaction data"
+        columns:
+          - name: TransactionID
+            description: "Primary key of the transaction"
+          - name: AccountI
