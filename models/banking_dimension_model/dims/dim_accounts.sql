@@ -1,2 +1,3 @@
 {{ config(schema='GOLD', materialized='table') }}
-select * from {{ ref('stg_accounts') }}
+select 
+   a.* from {{ ref('stg_accounts') }} a
