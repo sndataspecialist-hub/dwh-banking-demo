@@ -7,5 +7,4 @@ select {{ dbt_utils.generate_surrogate_key(['ACCOUNTID', 'CUSTOMERID', 'ACCOUNTT
 from {{ source('bronze', 'Accounts') }} a
 
 )
-select * from base_table where account_sk NOT IN (SELECT account_sk FROM BANKING_DWH.GOLD.dim_accounts
-)
+select * from base_table 
