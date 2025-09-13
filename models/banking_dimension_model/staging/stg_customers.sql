@@ -9,4 +9,4 @@ from {{ source('bronze', 'Customers') }} a
 
 
 
-select * from base_table where customer_sk NOT IN (SELECT customer_sk FROM BANKING_DWH.GOLD.dim_customers)
+select * from base_table 

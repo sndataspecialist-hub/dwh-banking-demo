@@ -1,7 +1,6 @@
 {{ config(
     schema='GOLD',
-    materialized = 'incremental',
-    unique_key = 'TransactionID'
+    materialized = 'table'
 ) }}
 
 WITH source AS (
@@ -24,12 +23,7 @@ WITH source AS (
         CAST(InterestExpense AS NUMERIC(18,2)) AS InterestExpense
     FROM {{ ref('stg_financial_data') }} 
 
-    {% if is_incremental() %}
-        -- only load new rows on incremental runs
-        WHERE TransactionID > (
-            SELECT COALESCE(MAX(TransactionID), 0) FROM {{ this }}
-        )
-    {% endif %}
+
 
 )
 
