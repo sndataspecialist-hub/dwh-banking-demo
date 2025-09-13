@@ -1,8 +1,8 @@
 version: 2
 
 sources:
-  - name: raw
-    schema: RAW
+  - name: bronze
+    schema: bronze
     database: BANKING_DWH  # replace with your Snowflake DB
     tables:
       - name: Customers
@@ -35,3 +35,6 @@ sources:
           - name: TransactionID
             description: "Primary key of the transaction"
           - name: AccountI
+      - name: FinancialData
+        description: "Finance data"
+        

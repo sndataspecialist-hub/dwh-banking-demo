@@ -1,8 +1,8 @@
-{{ config(schema='STAGE', materialized='view') }}
+{{ config(schema='SILVER', materialized='view') }}
 
 -- models/staging/stg_accounts.sql
 select *
-from {{ source('raw', 'Accounts') }}
+from {{ source('bronze', 'Accounts') }}
 
 
 

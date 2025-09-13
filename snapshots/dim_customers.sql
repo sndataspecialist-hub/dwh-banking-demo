@@ -2,7 +2,7 @@
 
 {{
     config(
-      target_schema='DM',
+      target_schema='GOLD',
       unique_key='CUSTOMERID',
       strategy='timestamp',
       updated_at='CREATE_DATE'

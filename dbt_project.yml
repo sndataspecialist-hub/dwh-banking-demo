@@ -40,9 +40,9 @@ models:
     +materialized: view  # Default for all banking_dimension_model
     
     staging:
-      +schema: STAGE
+      +schema: SILVER
       +materialized: view
 
     facts:
-      +schema: DM          # put fact models in DM schema  
+      +schema: GOLD          # put fact models in DM schema  
       +materialized: table

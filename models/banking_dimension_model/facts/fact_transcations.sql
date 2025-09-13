@@ -1,6 +1,6 @@
 {{
   config(
-    schema='DM',
+    schema='GOLD',
     materialized='incremental',
     incremental_strategy='merge',
     unique_key='TransactionID'
