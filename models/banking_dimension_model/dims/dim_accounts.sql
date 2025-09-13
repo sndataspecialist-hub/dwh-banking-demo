@@ -1,2 +1,2 @@
-{{ config(schema='DM', materialized='table') }}
+{{ config(schema='GOLD', materialized='table') }}
 select * from {{ ref('stg_accounts') }}
